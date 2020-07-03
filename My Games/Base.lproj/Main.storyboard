@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ySy-tl-G91">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,6 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="YD1-bw-x24">
+                            <rect key="frame" x="0.0" y="146" width="414" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="DR3-Hi-zF7" customClass="GameTableViewCell" customModule="My_Games" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
@@ -59,7 +64,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="ivCover" destination="57a-Fb-pc3" id="Z24-hV-kWl"/>
+                                    <outlet property="ivCover" destination="57a-Fb-pc3" id="Igh-w2-jzY"/>
                                     <outlet property="lbConsole" destination="flR-1V-xhc" id="EXr-eO-10U"/>
                                     <outlet property="lbTitle" destination="Xi1-8E-UQ5" id="oen-vg-mwE"/>
                                     <segue destination="YLv-wr-yZ2" kind="show" id="X6O-fj-zkw"/>
@@ -138,6 +143,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ivCover" destination="RgB-Wk-5hY" id="8Nc-Ps-sbJ"/>
+                        <outlet property="lbConsole" destination="N0D-oE-NuR" id="7un-nM-gxl"/>
+                        <outlet property="lbReleaseDate" destination="N0D-oE-NuR" id="Jtl-kU-WYl"/>
+                        <outlet property="lbTitle" destination="x8u-Jl-Tjs" id="zJs-7k-gfr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6T-Dk-fST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,6 +204,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="AddEditiGame:" destination="Iom-yH-2L5" eventType="touchUpInside" id="fLb-7N-sCy"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkR-c6-MzQ">
                                 <rect key="frame" x="16" y="486" width="382" height="261"/>
@@ -200,6 +214,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sr7-py-Nif">
                                 <rect key="frame" x="184" y="601.5" width="46" height="30"/>
                                 <state key="normal" title="Toque para adicionar uma imagem de capa"/>
+                                <connections>
+                                    <action selector="AddEditCOver:" destination="Iom-yH-2L5" eventType="touchUpInside" id="qcr-6L-gHa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -231,6 +248,14 @@
                         <viewLayoutGuide key="safeArea" id="g21-oH-iHr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Adicionar novo Jogo" id="jBN-ms-jkT"/>
+                    <connections>
+                        <outlet property="btAddEdit" destination="rGp-RF-pQC" id="sNg-dJ-eVc"/>
+                        <outlet property="btCover" destination="sr7-py-Nif" id="zy2-xr-qNM"/>
+                        <outlet property="dpReleaseDate" destination="SWL-hS-vba" id="DwY-tZ-hLs"/>
+                        <outlet property="ivCover" destination="jkR-c6-MzQ" id="afo-Sc-cdo"/>
+                        <outlet property="tfConsole" destination="9Gw-0l-fec" id="RLw-vv-54H"/>
+                        <outlet property="tfTitle" destination="7hM-AO-7Db" id="ytV-MC-KrG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Yo-76-8pw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,6 +269,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Jb2-Z4-kDH">
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="UhG-bX-1tS" style="IBUITableViewCellStyleDefault" id="dNo-UP-BXk">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
